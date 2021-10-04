@@ -46,15 +46,13 @@ def map(data, lat, lon, zoom):
 row1_1, row1_2 = st.columns((2,3))
 
 with row1_1:
-    st.title("NYC Uber Ridesharing Data")
+    st.title("Origin-Destination extracted from iTIC ")
+    st.title("Date : 1 January 2019")
     hour_selected = st.slider("Select hour of pickup", 0, 23)
 
 with row1_2:
-    st.write(
-    """
-    WST
-    """)
-
+    st.write("Name : Werayuth Sriyoha")
+    st.write("ID : 6130823921")
 
 
 # FILTERING DATA BY HOUR SELECTED
@@ -68,7 +66,7 @@ row2= st.columns((5))
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
 zoom_level = 12
 midpoint = (np.average(data["lat"]), np.average(data["lon"]))
-st.write("**All New York City from %i:00 and %i:00**" % (hour_selected, (hour_selected + 1) % 24))
+st.write("**Bangkok from %i:00 and %i:00**" % (hour_selected, (hour_selected + 1) % 24))
 map(data, midpoint[0], midpoint[1], 11)
 
 # FILTERING DATA FOR THE HISTOGRAM
