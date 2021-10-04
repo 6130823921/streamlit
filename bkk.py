@@ -12,7 +12,7 @@ st.set_page_config(layout="wide")
 # LOADING DATA
 DATE_TIME = "timestart"
 DATA_URL = (
-    "https://github.com/6130823921/streamlit/blob/4cc587a581353c0969934c8cabb48395d7e6f9be/data05.csv"
+    "https://github.com/6130823921/streamlit/blob/63f379f154005cb683580ca4b394f2d2faaa7e0b/data01.csv"
 )
 
 @st.cache(persist=True)
@@ -49,7 +49,6 @@ def map(data, lat, lon, zoom):
             ),
         ]
     ))
-
 # LAYING OUT THE TOP SECTION OF THE APP
 row1_1, row1_2 = st.columns((2,3))
 
@@ -60,10 +59,9 @@ with row1_1:
 with row1_2:
     st.write(
     """
-    ##
-    Examining how Uber pickups vary over time in New York City's and at its major regional airports.
-    By sliding the slider on the left you can view different slices of time and explore different transportation trends.
+    WST
     """)
+
 
 
 # FILTERING DATA BY HOUR SELECTED
@@ -79,8 +77,6 @@ zoom_level = 12
 midpoint = (np.average(data["lat"]), np.average(data["lon"]))
 st.write("**All New York City from %i:00 and %i:00**" % (hour_selected, (hour_selected + 1) % 24))
 map(data, midpoint[0], midpoint[1], 11)
-
-
 
 # FILTERING DATA FOR THE HISTOGRAM
 filtered = data[
