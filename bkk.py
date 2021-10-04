@@ -12,18 +12,11 @@ st.set_page_config(layout="wide")
 # LOADING DATA
 DATE_TIME = "timestart"
 DATA_URL = (
-    "https://github.com/6130823921/streamlit/blob/63f379f154005cb683580ca4b394f2d2faaa7e0b/data01.csv"
+    "https://github.com/6130823921/streamlit/blob/63f379f154005cb683580ca4b394f2d2faaa7e0b/data01.csv?raw=true"
 )
 
-@st.cache(persist=True)
-def load_data(nrows):
-    data = pd.read_csv(DATA_URL)
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis="columns", inplace=True)
-    data[DATE_TIME] = pd.to_datetime(data[DATE_TIME])
-    return data
-
-data = load_data(100000)
+data = pd.read_csv(DATA_URL)
+data[DATE_TIME] = pd.to_datetime(data[DATE_TIME])
 
 # CREATING FUNCTION FOR MAPS
 
