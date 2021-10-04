@@ -12,7 +12,7 @@ st.set_page_config(layout="wide")
 # LOADING DATA
 DATE_TIME = "timestart"
 DATA_URL = (
-    "https://raw.githubusercontent.com/Maplub/odsample/master/20190105.csv"
+    "https://github.com/6130823921/streamlit/blob/4cc587a581353c0969934c8cabb48395d7e6f9be/data05.csv"
 )
 
 @st.cache(persist=True)
